@@ -37,9 +37,3 @@ select created_at, url,
 split_part(substring(url from '//[^/]+([^?#]+)'), '/', 2) as path1,
 split_part(substring(url from '//[^/]+([^?#]+)'), '/', 3) as path2
 from analysis.access_log;
-
-
-
-
--- 8. 결손 값을 디폴트 값으로 대치하기
--- 쿠폰 사용여부가 함께 있는 구매로그

@@ -1,5 +1,5 @@
 -- 구매 로그
-CREATE TABLE analysis.purchase_log (
+CREATE TABLE purchase_log (
   seq SERIAL NOT NULL,
   purchase_id CHAR(5) NOT NULL,
   amount INTEGER NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE analysis.purchase_log (
   CONSTRAINT purchase_log_pkey_seq PRIMARY KEY (seq)
 );
 
-INSERT INTO analysis.purchase_log
+INSERT INTO purchase_log
 (purchase_id, amount, coupon, created_at, updated_at)
 VALUES
 ('10001', 3280, null, now(), now()),
