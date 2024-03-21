@@ -88,7 +88,7 @@ order by bucket
 
 
 -- 10-9. 임의의 계층 너비로 히스토그램 작성하기
--- 상한-하한으로 최적 버무이를 구할 수도 있지만, 소수점으로 구분된 리포트는 가독성이 좋지 않음.
+-- 상한-하한으로 최적 범위를 구할 수도 있지만, 소수점으로 구분된 리포트는 가독성이 좋지 않음.
 -- 고정값 기반으로 임의의 게층 너비로 변경할 수 있는 히스토그램을 만들어야함
 -- 10-9 최종 히스토그램 쿼리
 with stats as 
@@ -111,7 +111,7 @@ purchase_log_with_bucket as
     -- 계층 판정
     floor(1.0*(price-min_price) / (1.0*range_price/bucket_num)) + 1 as bucket
 
-    -- 계층판정(2) 함수:: with_bucket
+    -- 계층판정 함수:: with_bucket
     -- with_bucket(price, min_price, range_price, bucket_num) as bucket
     from purchase_detail_log, stats
 )
