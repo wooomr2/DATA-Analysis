@@ -126,4 +126,4 @@ where
 group by
     t1.category,
     t2.category
-order by t1.category, t2.category
+order by t1.category, t2.category;
